@@ -1,0 +1,15 @@
+<h2>
+    <% if @pet.found %>
+      <span>:)</span>
+    <% else %>
+      <span>:(</span>
+    <% end %>
+    <span><%= @pet.name %></span>
+</h2>
+<div><%= @pet.kind %></div>
+<div><%= @pet.phone %></div>
+<div>
+<%= link_to "view", pet_path(@pet) %>
+<%= link_to "edit", edit_pet_path(@pet) %>
+<%= link_to "delete", pet_path(@pet) %>
+</div>

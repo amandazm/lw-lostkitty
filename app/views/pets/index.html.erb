@@ -1,0 +1,24 @@
+<% @pets.each do |pet| %>
+  <div>
+    <% if pet.found %>
+      <span>:)</span>
+    <% else %>
+      <span>:(</span>
+    <% end %>
+    <span><%= pet.kind %></span>
+    <span><%= pet.name %></span>
+    <span><%= pet.phone %></span>
+    <span>
+    <%= link_to "view", pet_path(pet) %>
+    <%= link_to "edit", edit_pet_path(pet) %>
+    <%= link_to "delete", pet_path(pet), method: :delete %>
+    <% if pet.found %>
+      <%= link_to "unfound", unfound_pet_path(pet), method: :post %>
+    <% else %>
+      <%= link_to "found", found_pet_path(pet), method: :post %>
+    <% end %>
+    </span>
+  </div>
+<% end %>
+
+<%= link_to "Add New Pet", new_pet_path %>

@@ -1,0 +1,25 @@
+<%= form_for(@pet) do |f| %>
+  <div>
+    <%= f.label :kind %>
+    <%= f.text_field :kind %>
+  </div>
+  
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+
+  <div>
+    <%= f.label :found %>
+    <%= f.check_box :found %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
